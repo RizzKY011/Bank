@@ -11,26 +11,27 @@
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nama</th>
-                <th scope="col">Jurusan</th>
-                <th scope="col">Mata Kuliah</th>
-                <th scope="col">ID_Dosen</th>
+                <th scope="col">NIP</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Nomor Ruangan</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
-              @foreach($dosen as $dsn)
+              @foreach ($dosen as $dosen)
               <tr>
-                <th scope="row">{{$dsn->id_dosen}}</th>
-                <td>{{$dsn->nama_dosen}}</td>
-                <td>{{$dsn->prodi}}</td>
-                <td>{{$dsn->matakuliah}}</td>
-                <td>{{$dsn->ktm->nomor_identitas}}</td>
+                <th scope="row">{{$dosen->id_dosen}}</th>
+                <td>{{$dosen ->nama}}</td>
+                <td>{{$dosen->nip}}</td>
+                <td>{{$dosen ->alamat}}</td>
+                <td>{{$dosen ->nama_ruangan}}</td>
                 <td>
                     <button type="button" class="btn btn-primary">Update</button>
                     <button type="button" class="btn btn-danger">Hapus</button>
                 </td>
               </tr>
               @endforeach
+
             </tbody>
           </table>
     </div>
