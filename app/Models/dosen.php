@@ -8,13 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Dosen extends Model
 {
     use HasFactory;
-
     protected $table = 'dosen';
-
-    protected $primaryKey = 'id';
-
+    protected $primaryKey = 'id_dosen';
     public $timestamps = false;
-
-    protected $fillable = ['id', 'nip', 'nama', 'email', 'no_hp'];
-
+    public function ktm()
+    {
+        return $this->hasOne(ktm::class, 'id_dosen');
+    }
+    protected $fillable = [
+        'nip',
+        'nama',
+        'email',
+        'matakuliah',
+        'gender'
+    ];
 }
